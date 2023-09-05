@@ -111,7 +111,7 @@ function PrivateRoute({ Component }) {
         })
         .catch((e) => console.log(e));
     }
-    console.log("SESSION", sessionIsValid);
+    console.log("SESSION IS VALID", sessionIsValid);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionIsValid]);
 
