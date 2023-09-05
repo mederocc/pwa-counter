@@ -9,9 +9,10 @@ function PrivateRoute({ Component }) {
   const dataContext = useContext(DataContext);
   const navigate = useNavigate();
   const [didSignOut, setDidSignOut] = useState(false);
-  const [sessionIsValid, setSessionIsValid] = useState(
-    JSON.parse(localStorage.getItem("sessionIsValid")) ?? null
-  );
+  const [sessionIsValid, setSessionIsValid] = useState(() => {
+    const storedSessionData = localStorage.getItem("sessionData");
+    return storedSessionData ? JSON.parse(storedSessionData) : null;
+  });
   const [isOnline, setIsOnline] = useState(navigator.onLine);
 
   const handleOnline = () => {
@@ -37,9 +38,7 @@ function PrivateRoute({ Component }) {
       dataContext.removeUser();
       navigate("/");
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [sessionIsValid, navigate, dataContext]);
 
   useEffect(() => {
     if (dataContext.username) {
@@ -60,7 +59,6 @@ function PrivateRoute({ Component }) {
         const logout = logOutUser(cognitoUser);
         logout
           .then((res) => {
-            console.log(res);
             cognitoUser.signOut();
             dataContext.removeUser();
             navigate("/");
@@ -69,18 +67,20 @@ function PrivateRoute({ Component }) {
       }
 
       if (cognitoUser && !didSignOut && isOnline) {
-        // validates on mount.
-
         refreshTokensAndAWS(cognitoUser).then((res) => {
-          localStorage.setItem("sessionIsValid", JSON.stringify(res));
           setSessionIsValid(res);
+
+          // Store the session data in localStorage
+          localStorage.setItem("sessionData", JSON.stringify(res));
         });
 
         const refreshInterval = setInterval(() => {
           console.log("refreshing tokens");
           refreshTokensAndAWS(cognitoUser).then((res) => {
             setSessionIsValid(res);
-            localStorage.setItem("sessionIsValid", JSON.stringify(res));
+
+            // Store the session data in localStorage
+            localStorage.setItem("sessionData", JSON.stringify(res));
           });
         }, 50 * 60 * 1000); // 50 minutes in milliseconds
 
@@ -90,9 +90,8 @@ function PrivateRoute({ Component }) {
     } else if (!dataContext.username) {
       navigate("/");
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dataContext.username, navigate, didSignOut, isOnline]);
+  }, [dataContext.username, navigate, didSignOut, isOnline, sessionIsValid]);
 
   useEffect(() => {
     if (sessionIsValid === false) {
@@ -110,9 +109,7 @@ function PrivateRoute({ Component }) {
           dataContext.removeUser();
         })
         .catch((e) => console.log(e));
-    }
-    console.log("SESSION IS VALID", sessionIsValid);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionIsValid]);
 
   return (
