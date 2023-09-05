@@ -1,0 +1,10 @@
+.bottom-buttons {
+  /* border: solid red 3px; */
+  position: absolute;
+  bottom: 0px;
+  /* width: 100%; */
+}
+
+.spacing {
+  margin-top: 3vh;
+}

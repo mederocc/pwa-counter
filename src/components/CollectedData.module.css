@@ -1,0 +1,127 @@
+.records-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: red solid 3px; */
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 4vh;
+  min-height: 90%;
+  border: gray solid 1px;
+  overflow: scroll;
+  width: 90%;
+  height: 50%;
+  border-radius: 4px;
+  max-width: 450px;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: contain;
+}
+
+.grid-column {
+  /* border: solid green 3px; */
+  display: flex;
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  left: 0px;
+  z-index: 1;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: row;
+  /* border: yellow solid 3px; */
+}
+
+.bottom-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+.right-shadow {
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.4); /* Adjust the horizontal offset */
+  transition: box-shadow 0.3s ease;
+}
+
+.grid-column div {
+  /* border: solid green 2px; */
+  padding: 0px 0.3rem;
+  height: 1.5rem;
+}
+
+.grid-column-values {
+  /* border: solid yellow 2px; */
+  display: flex;
+}
+
+.grid-column-values div {
+  justify-content: center;
+}
+
+.grid-cell {
+  border: solid gray 1px;
+  width: 13rem;
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+}
+
+.value {
+  border: solid gray 1px;
+  width: 3rem;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark {
+  background-color: whitesmoke;
+}
+
+.light {
+  background-color: rgb(233, 233, 233);
+}
+
+.first-row {
+  font-weight: bold;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.button-container {
+  /* border: solid blue 3px; */
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0px;
+}
+
+.clickable-text {
+  color: #007bff; /* Blue color, you can choose your own */
+  cursor: default;
+}
+
+.clickable-text:active,
+.clickable-text:visited {
+  color: #0056b3; /* Darker color for clicked and visited states */
+}
+
+.smaller-font {
+  font-size: small;
+}

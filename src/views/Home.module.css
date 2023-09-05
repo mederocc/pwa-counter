@@ -1,0 +1,15 @@
+.button-container {
+  /* border: 3px solid green; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1vw;
+}
+
+.tabs {
+  position: absolute;
+  /* border: 3px solid blue; */
+  top: 0; /* Sticky at the top of the viewport */
+  z-index: 100; /* Optional: Set a higher z-index if needed */
+  width: 100%;
+}

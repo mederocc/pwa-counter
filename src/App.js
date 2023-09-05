@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AuthComponent from "./components/Auth/AuthComponent";
+import { Route, Routes } from "react-router-dom";
+import "@aws-amplify/ui-react/styles.css";
+import classes from "./App.module.css";
+import DataProvider from "./store/DataProvider";
+import PrivateRoute from "./components/Auth/PrivateRoute";
+import Home from "./views/Home";
+import OfflinePageWarning from "./utils/OfflinePageWarning";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataProvider>
+      <div className={classes["app-container"]}>
+        <Routes>
+          <Route path="/" element={<AuthComponent />} />
+          <Route path="/home" element={<PrivateRoute Component={Home} />} />
+        </Routes>
+        <OfflinePageWarning />
+      </div>
+    </DataProvider>
   );
-}
+};
 
 export default App;

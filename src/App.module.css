@@ -1,0 +1,18 @@
+.app-container {
+  /* padding: 2rem; */
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  /* border: 3px solid blue; */
+  top: 0px;
+
+  max-width: 768px;
+  border: 1px lightgray solid;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 100vh;
+  color: #515e6a;
+}

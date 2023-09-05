@@ -1,0 +1,31 @@
+.container {
+  /* border: 3px solid blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card {
+  margin-top: 12vh;
+  border-radius: 5%;
+  padding: 5rem 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  width: 50vh;
+  align-self: center;
+  justify-content: center;
+  /* border: 3px solid red; */
+}
+
+.card button {
+  margin-top: 3rem;
+}
+
+.card div {
+  white-space: nowrap;
+  padding: 1rem 4rem;
+}

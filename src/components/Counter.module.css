@@ -1,0 +1,52 @@
+.counter-container {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark {
+  background-color: rgba(233, 233, 233, 0);
+}
+
+.light {
+  background-color: rgb(233, 233, 233);
+}
+
+.name-container {
+  margin-right: 0.25rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+}
+
+.name-container p {
+  align-content: center;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 35%;
+  margin-left: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.button-container p {
+  margin: 0.5rem;
+  width: 3vh;
+  display: flex;
+  justify-content: center;
+
+  /* border: solid red 3px; */
+}
+
+.button-container button {
+  height: 5vh;
+  width: 5vh;
+}

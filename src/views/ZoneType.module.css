@@ -1,0 +1,35 @@
+.zone-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 0px 2rem 0px;
+  /* border: solid red 3px; */
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  /* border: solid 3px blue; */
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid red 3px; */
+  height: 30vh;
+  justify-content: center;
+}
+
+.button {
+  margin-bottom: 1.5rem;
+}
+
+.bottom-buttons {
+  /* border: solid red 3px; */
+  position: absolute;
+  bottom: 0px;
+}

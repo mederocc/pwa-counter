@@ -1,0 +1,26 @@
+.search-container {
+  margin-top: 2rem;
+  /* border: blue solid 1px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+}
+
+.search-container input {
+  margin: 1rem 0px 2rem 0px;
+  width: 22rem;
+}
+
+.button-container {
+  /* border: solid blue 3px; */
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0px;
+}

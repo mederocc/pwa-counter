@@ -1,0 +1,14 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.spacing {
+  margin-top: 3vh;
+}

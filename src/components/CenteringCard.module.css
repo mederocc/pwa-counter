@@ -1,0 +1,12 @@
+.container {
+  /* border: solid purple 3px; */
+  margin-top: 20%;
+}
+
+.container > div {
+  /* border: solid blue 3px; */
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+.container {
+  /* border: solid green 3px; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.records-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid red 3px; */
+}
+
+.button-container {
+  /* border: solid blue 3px; */
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0px;
+}
