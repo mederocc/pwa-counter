@@ -10,7 +10,7 @@ function PrivateRoute({ Component }) {
   const navigate = useNavigate();
   const [didSignOut, setDidSignOut] = useState(false);
   const [sessionIsValid, setSessionIsValid] = useState(
-    JSON.parse(localStorage.getItem("sessionIsValid")) || null
+    JSON.parse(localStorage.getItem("sessionIsValid")) ?? null
   );
   const [isOnline, setIsOnline] = useState(navigator.onLine);
 
